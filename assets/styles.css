@@ -2,6 +2,8 @@
     font-family: 'Roboto';
 }
 
+/* Styling the header displaying "Weather Dashboard" */
+
 .header {
     background-color: #333;
     color: white;
@@ -13,11 +15,15 @@
     justify-content: center;
 }
 
+/* Positioning search bar and button */
+
 .search-container {
     margin: 10px 0;
     text-align: start;
     margin-left: 10px;
 }
+
+/* Styling the input bar */
 
 .search-input {
     padding: 10px;
@@ -26,6 +32,8 @@
     width: 300px;
     font-size: 16px;
 }
+
+/* Styling the search button */
 
 .search-button {
     padding: 10px 136px;
@@ -38,10 +46,13 @@
     margin: 5px;
 }
 
+/* Adding hover effect over search button */
+
 .search-button:hover {
     background-color: #0056b3;
 }
 
+/* Container for city buttons */
 
 .city-container {
     display: flex;
@@ -49,6 +60,8 @@
     width: 40vh;
     margin: 10px;   
 }
+
+/* Styling for prebuilt city buttons */
 
 .city-container button {
     margin: 5px;
@@ -58,9 +71,13 @@
     background-color: rgb(197, 197, 197);
 }
 
+/* Makes color lighter when hover over city button */
+
 .city-container button:hover {
     background-color: rgb(233, 233, 233);
 }
+
+/* Styling for bordered box */
 
 .bordered-box {
     border: 2px solid black;
@@ -70,15 +87,21 @@
     margin-top: 35px;
 }
 
+/* Setting elements side to side */
+
 .weather-element {
     display: flex;
     flex-direction: row;
 }
 
+/* Setting the search input and button on top of each other */
+
 .search-input, .search-button {
     display: block;
     margin: 15px 0;
 }
+
+/* Setting flex container for all items, setting the default position to row to set up changing elements side by side later */
 
 .flex-container {
     display: flex;
@@ -87,10 +110,14 @@
     justify-content: space-between;
 }
 
+/* Now the boxs on top of each other for weather info */
+
 .box-container {
     display: flex;
     flex-direction: column;
 }
+
+/* Size and positioning for forecast boxs */
 
 .forecast {
     width: 900px;
@@ -99,10 +126,14 @@
     margin-top: 25px;
 }
 
+/* Setting the city buttons and search section on top of each other */
+
 .search-container-main {
     display: flex;
     flex-direction: column;
 }
+
+/* Setting margin so text isnt too close to edges */
 
 .box-container h1 {
     margin-left: 10px;
@@ -112,9 +143,7 @@
     margin-left: 10px;
 }
 
-.forecast h2 {
-    margin-left: 10px;
-}
+/* Styling for forecast boxs */
 
 .solid-box {
     width: 175px;
@@ -126,6 +155,8 @@
     justify-content: space-around;
 }
 
+/* Setting forecast boxs in a row */
+
 .forecast-container {
     display: flex;
     flex-direction: row;
@@ -135,6 +166,15 @@
     margin-left: 5px;
 }
 
+/* Size for emoji */
+
 .weather-emoji {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+}
+
+/* Making date more apparent */
+
+.forecast-date {
+    font-size: larger;
+    font-weight: bold;
 }

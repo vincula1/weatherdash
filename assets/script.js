@@ -1,4 +1,8 @@
+/* Super secret API key */
+
 const apiKey = '473ad69d0cc3c69ab5560b9bb0170940';
+
+/* Setting city variable for link when a city and searched */
 
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -6,6 +10,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     fetchWeatherForCity(city);
 });
 
+/* Setting city variable as the city name on the button that is clicked */
 
 document.querySelectorAll('button[data-city]').forEach(button => {
     button.addEventListener('click', function() {
@@ -14,9 +19,11 @@ document.querySelectorAll('button[data-city]').forEach(button => {
     });
 });
 
+/* Function to fetch weather data json file and pass it info displayForecast functon */
+
 function fetchWeatherForCity(city) {
-    let currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-    let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+    let currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+    let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
 
     fetch(currentWeatherUrl)
         .then(response => response.json())
@@ -31,6 +38,8 @@ function fetchWeatherForCity(city) {
         });
 }
 
+/* Sets varaibles to manipulate later, setting data ids to strings with formatted data imbedded into it. Includes emoji
+display conditions as well */
 
 function displayWeather(data) {
     var weatherInfo = data.weather[0].main;
@@ -39,7 +48,7 @@ function displayWeather(data) {
     const formattedDate = currentDate.toLocaleDateString();
     
     document.getElementById('city-date').innerText = `${cityName}, ${formattedDate}`;
-    document.getElementById('temp').innerText = `Temp: ${data.main.temp} °C`;
+    document.getElementById('temp').innerText = `Temp: ${data.main.temp} °F`;
     document.getElementById('wind').innerText = `Wind: ${data.wind.speed} MPH`;
     document.getElementById('humidity').innerText = `Humidity: ${data.main.humidity} %`;
     
@@ -61,6 +70,9 @@ function displayWeather(data) {
     } 
 }
 
+/* Function to display forecast, iterates through each day and provides information for it. Finds a value thats
+inside each file like the "12:00:00" to get info from */
+
 function displayForecast(data) {
     const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00"));
     
@@ -75,7 +87,7 @@ function displayForecast(data) {
         emojiSpan.innerText = getWeatherEmoji(day.weather[0].main);
         
         const tempSpan = document.querySelector(`.forecast-temp[data-day="${dayNumber}"]`);
-        tempSpan.innerText = `Temp: ${day.main.temp} °C`;
+        tempSpan.innerText = `Temp: ${day.main.temp} °F`;
 
         const windSpan = document.querySelector(`.forecast-wind[data-day="${dayNumber}"]`);
         windSpan.innerText = `Wind: ${day.wind.speed} MPH`;
@@ -85,6 +97,7 @@ function displayForecast(data) {
     });
 }
 
+/* Emoji picker for the function above */
 
 function getWeatherEmoji(weatherMain) {
     switch (weatherMain) {
@@ -102,5 +115,7 @@ function getWeatherEmoji(weatherMain) {
             return '';
     }
 }
+
+/* Displays Austin upon page loading */
 
 fetchWeatherForCity('Austin');
