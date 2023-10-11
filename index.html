@@ -11,14 +11,39 @@
     <div class = "header">
         <h1>Weather Dashboard</h1>
     </div>
-    <div class="search-container">
-        <h2>Search for a City:</h2>
-        <form action="#" method="get">
-            <input type="text" name="city" placeholder="Enter city name" class="search-input">
-            <button type="submit" class="search-button">Search</button>
-        </form>
-    </div>
+    <div class="flex-container">
+        <div class="search-container-main">
+        <div class="search-container">
+            <h2>Search for a City:</h2>
+            <form action="#" method="get">
+                <input type="text" name="city" placeholder="Enter city name" class="search-input">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+        <div class="weather-element">
+            <section class="city-container">
+                    <button>Atlanta</button>
+                    <button>Denver</button>
+                    <button>Seattle</button>
+                    <button>San Francisco</button>
+                    <button>Orlando</button>
+                    <button>New York</button>
+                    <button>Chicago</button>
+                    <button>Austin</button>
+            </section>
+        </div>
+        </div>
+        <div class="box-container">
+            <div class="bordered-box">
 
+            </div>
+            <div class="forecast">
+
+            </div>
+        </div>
+    </div>
+    
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
