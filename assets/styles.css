@@ -64,7 +64,7 @@
 
 .bordered-box {
     border: 2px solid black;
-    width: 800px;
+    width: 900px;
     height: 200px;
     border-radius: 10px;
     margin-top: 35px;
@@ -83,7 +83,7 @@
 .flex-container {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 85%;
     justify-content: space-between;
 }
 
@@ -94,8 +94,8 @@
 
 .forecast {
     border: 2px solid black;
-    width: 800px;
-    height: 200px;
+    width: 900px;
+    height: 300px;
     justify-content: space-between;
     margin-top: 25px;
 }
@@ -103,4 +103,28 @@
 .search-container-main {
     display: flex;
     flex-direction: column;
+}
+
+.box-container h1 {
+    margin-left: 10px;
+}
+
+.box-container h4 {
+    margin-left: 10px;
+}
+
+.forecast h2 {
+    margin-left: 10px;
+}
+
+.solid-box {
+    width: 175px;
+    height: 200px;
+    background-color: lightblue;
+    margin: 10px;
+}
+
+.forecast-container {
+    display: flex;
+    flex-direction: row;
 }
