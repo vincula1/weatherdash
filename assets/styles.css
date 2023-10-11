@@ -93,7 +93,6 @@
 }
 
 .forecast {
-    border: 2px solid black;
     width: 900px;
     height: 300px;
     justify-content: space-between;
@@ -134,4 +133,8 @@
 
 .solid-box span {
     margin-left: 5px;
+}
+
+.weather-emoji {
+    font-size: 1.5rem;
 }
